@@ -1,9 +1,12 @@
 package org.javaacademy.insurance.servise.brazil;
 
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.javaacademy.insurance.config.InsuranceCalculationBrazilProperties;
 import org.javaacademy.insurance.entity.InsuranceType;
 import org.javaacademy.insurance.servise.InsuranceCalcService;
 import org.javaacademy.insurance.utils.CalculateCostUtils;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -11,8 +14,10 @@ import java.math.BigDecimal;
 import static java.math.BigDecimal.ZERO;
 
 @Component
+@RequiredArgsConstructor
+@EnableConfigurationProperties(value = InsuranceCalculationBrazilProperties.class)
 public class InsuranceCalcBrazilService implements InsuranceCalcService {
-    private InsuranceCalculationBrazilProperties properties;
+    private final InsuranceCalculationBrazilProperties properties;
     private BigDecimal price = ZERO;
 
     /**

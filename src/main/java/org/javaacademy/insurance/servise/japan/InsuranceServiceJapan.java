@@ -28,7 +28,8 @@ public class InsuranceServiceJapan implements InsuranceService {
         String contractNumber = ContractNumberGenerator.generateContractNumber();
         BigDecimal insurancePrice = insuranceCalcJapanService.calculateInsuranceCost(insuredAmount, insuranceType);
         return new InsuranceContract(contractNumber, insurancePrice, insuredAmount,
-                properties.getInsuranceCurrency(), client, properties.getOperatingCountry(), insuranceType);
+                properties.getInsuranceCurrency(), client,
+                properties.getOperatingCountry(), insuranceType);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package org.javaacademy.insurance.servise.brazil;
 
 import lombok.AllArgsConstructor;
+import org.javaacademy.insurance.config.InsuranceCalculationBrazilProperties;
 import org.javaacademy.insurance.entity.Client;
 import org.javaacademy.insurance.entity.InsuranceContract;
 import org.javaacademy.insurance.entity.InsuranceType;
@@ -19,15 +20,16 @@ import static org.javaacademy.insurance.entity.OperatingCountry.BRAZIL;
 public class InsuranceServiceBrazil implements InsuranceService {
 
     private InsuranceCalcBrazilService insuranceCalcBrazilService;
-
+    private InsuranceCalculationBrazilProperties properties;
 
     @Override
     public InsuranceContract generateInsuranceProposal(BigDecimal insuredAmount, Client client,
                                                        InsuranceType insuranceType) {
         String contractNumber = ContractNumberGenerator.generateContractNumber();
         BigDecimal insurancePrice = insuranceCalcBrazilService.calculateInsuranceCost(insuredAmount, insuranceType);
-        return new InsuranceContract(contractNumber, insurancePrice, insuredAmount,
-                ZAR, client, BRAZIL, insuranceType);
+        return new InsuranceContract(contractNumber, insurancePrice,
+                insuredAmount, properties.getInsuranceCurrency(),
+                client, properties.getOperatingCountry(), insuranceType);
     }
 
     @Override

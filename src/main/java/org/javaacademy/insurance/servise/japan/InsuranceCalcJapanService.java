@@ -16,7 +16,6 @@ import static java.math.BigDecimal.ZERO;
 @EnableConfigurationProperties(value = InsuranceCalculationJapanProperties.class)
 @RequiredArgsConstructor
 public class InsuranceCalcJapanService implements InsuranceCalcService {
-
     private final InsuranceCalculationJapanProperties properties;
 
     private BigDecimal price = ZERO;
