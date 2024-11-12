@@ -1,0 +1,8 @@
+brazil:
+  data:
+    medical-case-coefficient: 0.03
+    theft-service-cost: 800
+    robbery-coefficient: 0.05
+    medical-service-cost: 300
+    insurance-currency: ZAR
+    operating-country: BRAZIL

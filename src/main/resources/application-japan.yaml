@@ -1,0 +1,8 @@
+japan:
+  data:
+    medical-case-coefficient: 0.015
+    theft-service-cost: 10000
+    robbery-coefficient: 0.01
+    medical-service-cost: 12000
+    insurance-currency: JPY
+    operating-country: JAPAN
