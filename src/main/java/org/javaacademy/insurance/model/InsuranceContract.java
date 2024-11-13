@@ -1,13 +1,12 @@
-package org.javaacademy.insurance.entity;
+package org.javaacademy.insurance.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 
-import static org.javaacademy.insurance.entity.InsuranceContractStatus.UNPAID;
+import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
 
 /**
  * Страховой договор.

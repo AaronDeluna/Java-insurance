@@ -1,7 +1,7 @@
 package org.javaacademy.insurance.storage;
 
 import lombok.Getter;
-import org.javaacademy.insurance.entity.InsuranceContract;
+import org.javaacademy.insurance.model.InsuranceContract;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

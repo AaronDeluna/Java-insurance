@@ -1,9 +1,8 @@
 package org.javaacademy.insurance.servise.brazil;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.javaacademy.insurance.config.InsuranceCalculationBrazilProperties;
-import org.javaacademy.insurance.entity.InsuranceType;
+import org.javaacademy.insurance.model.InsuranceType;
 import org.javaacademy.insurance.servise.InsuranceCalcService;
 import org.javaacademy.insurance.utils.CalculateCostUtils;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

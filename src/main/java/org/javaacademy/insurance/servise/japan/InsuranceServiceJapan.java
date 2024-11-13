@@ -2,18 +2,15 @@ package org.javaacademy.insurance.servise.japan;
 
 import lombok.AllArgsConstructor;
 import org.javaacademy.insurance.config.InsuranceCalculationJapanProperties;
-import org.javaacademy.insurance.entity.Client;
-import org.javaacademy.insurance.entity.InsuranceContract;
-import org.javaacademy.insurance.entity.InsuranceType;
+import org.javaacademy.insurance.model.Client;
+import org.javaacademy.insurance.model.InsuranceContract;
+import org.javaacademy.insurance.model.InsuranceType;
 import org.javaacademy.insurance.exception.ContractNotFoundException;
 import org.javaacademy.insurance.servise.InsuranceService;
 import org.javaacademy.insurance.utils.ContractNumberGenerator;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-
-import static org.javaacademy.insurance.entity.InsuranceCurrency.JPY;
-import static org.javaacademy.insurance.entity.OperatingCountry.JAPAN;
 
 @Component
 @AllArgsConstructor
