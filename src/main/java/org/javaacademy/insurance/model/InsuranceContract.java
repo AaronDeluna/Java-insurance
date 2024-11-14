@@ -1,5 +1,7 @@
 package org.javaacademy.insurance.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -11,9 +13,7 @@ import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
 /**
  * Страховой договор.
  */
-@Getter
-@Setter
-@RequiredArgsConstructor
+@Data
 public class InsuranceContract {
     private final String contractNumber;
     private final BigDecimal insurancePrice;

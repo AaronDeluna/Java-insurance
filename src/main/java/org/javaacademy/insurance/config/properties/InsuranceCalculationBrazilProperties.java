@@ -1,4 +1,4 @@
-package org.javaacademy.insurance.config;
+package org.javaacademy.insurance.config.properties;
 
 import lombok.Data;
 import org.javaacademy.insurance.model.InsuranceCurrency;
@@ -7,9 +7,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.math.BigDecimal;
 
-@ConfigurationProperties(value = "application-japan.yaml")
+@ConfigurationProperties(prefix = "brazil.data")
 @Data
-public class InsuranceCalculationJapanProperties {
+public class InsuranceCalculationBrazilProperties {
     private BigDecimal medicalCaseCoefficient;
     private BigDecimal theftServiceCost;
     private BigDecimal robberyCoefficient;

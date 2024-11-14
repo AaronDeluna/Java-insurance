@@ -1,11 +1,13 @@
 package org.javaacademy.insurance.storage;
 
 import lombok.Getter;
+import org.javaacademy.insurance.exception.ContractNotFoundException;
 import org.javaacademy.insurance.model.InsuranceContract;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Архив.
@@ -13,6 +15,15 @@ import java.util.Map;
 @Component
 @Getter
 public class Archive {
-    private Map<String, InsuranceContract> InsuranceContractStorage = new HashMap<>();
+    private final Map<String, InsuranceContract> insuranceContractStorage = new HashMap<>();
+
+    public void add(String contractNumber, InsuranceContract contract) {
+        insuranceContractStorage.put(contractNumber, contract);
+    }
+
+    public InsuranceContract findContractByNumber(String contractNumber) throws ContractNotFoundException {
+        return Optional.ofNullable(insuranceContractStorage.get(contractNumber))
+                .orElseThrow(ContractNotFoundException::new);
+    }
 
 }

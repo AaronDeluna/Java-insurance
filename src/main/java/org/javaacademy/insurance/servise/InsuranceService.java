@@ -8,6 +8,7 @@ import org.javaacademy.insurance.exception.ContractNotFoundException;
 import java.math.BigDecimal;
 
 public interface InsuranceService {
+
     /**
      * Выдача предложения по страховке.
      * @param insuredAmount сумма покрытия.
@@ -24,5 +25,5 @@ public interface InsuranceService {
      * @param contractNumber Номер страховки.
      * @throws ContractNotFoundException если страховка с таким глмером не найдена.
      */
-    void payInsurance(String contractNumber) throws ContractNotFoundException;
+    InsuranceContract payInsurance(String contractNumber) throws ContractNotFoundException;
 }

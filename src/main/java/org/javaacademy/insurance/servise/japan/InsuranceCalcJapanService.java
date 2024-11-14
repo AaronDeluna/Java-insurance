@@ -1,19 +1,15 @@
 package org.javaacademy.insurance.servise.japan;
 
 import lombok.RequiredArgsConstructor;
-import org.javaacademy.insurance.config.InsuranceCalculationJapanProperties;
+import org.javaacademy.insurance.config.properties.InsuranceCalculationJapanProperties;
 import org.javaacademy.insurance.model.InsuranceType;
 import org.javaacademy.insurance.servise.InsuranceCalcService;
 import org.javaacademy.insurance.utils.CalculateCostUtils;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 import static java.math.BigDecimal.ZERO;
 
-@Component
-@EnableConfigurationProperties(value = InsuranceCalculationJapanProperties.class)
 @RequiredArgsConstructor
 public class InsuranceCalcJapanService implements InsuranceCalcService {
     private final InsuranceCalculationJapanProperties properties;
@@ -22,6 +18,7 @@ public class InsuranceCalcJapanService implements InsuranceCalcService {
 
     /**
      * Расчет стоимости страховки в Японии.
+     *
      * @param insuredAmount сумма покрытия.
      * @param insuranceType тип старховки.
      * @return стоимоть страховки.
