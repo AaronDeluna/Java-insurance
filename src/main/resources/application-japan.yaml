@@ -1,0 +1,7 @@
+app:
+  medicalCaseCoefficient: 0.015
+  theftServiceCost: 10000
+  robberyCoefficient: 0.01
+  medicalServiceCost: 12000
+  insuranceCurrency: JPY
+  operatingCountry: JAPAN

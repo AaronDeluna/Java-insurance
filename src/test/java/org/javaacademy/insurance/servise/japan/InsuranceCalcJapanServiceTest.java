@@ -13,7 +13,7 @@ import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
 import static org.javaacademy.insurance.model.InsuranceType.THEFT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@ActiveProfiles("japan_service")
+@ActiveProfiles("japan")
 @SpringBootTest
 class InsuranceCalcJapanServiceTest {
     @Autowired

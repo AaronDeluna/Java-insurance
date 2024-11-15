@@ -12,7 +12,7 @@ import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
 import static org.javaacademy.insurance.model.InsuranceType.THEFT;
 import static org.junit.jupiter.api.Assertions.*;
 
-@ActiveProfiles("brazil_service")
+@ActiveProfiles("brazil")
 @SpringBootTest
 class InsuranceCalcBrazilServiceTest {
     @Autowired

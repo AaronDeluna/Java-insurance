@@ -28,7 +28,7 @@ import static org.javaacademy.insurance.model.OperatingCountry.JAPAN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-@ActiveProfiles("japan_service")
+@ActiveProfiles("japan")
 @SpringBootTest
 @Slf4j
 class InsuranceServiceJapanIT {
