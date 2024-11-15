@@ -15,7 +15,7 @@ import static org.javaacademy.insurance.model.InsuranceContractStatus.PAID;
 
 @AllArgsConstructor
 public abstract class AbstractInsuranceService implements InsuranceService {
-    private AbstractInsuranceCalcService abstractInsuranceCalcService;
+    private InsuranceCalcService insuranceCalcService;
     private InsuranceCalculationProperties properties;
     private ContractNumberGenerator contractNumberGenerator;
     private Archive archive;
@@ -24,7 +24,7 @@ public abstract class AbstractInsuranceService implements InsuranceService {
     public InsuranceContract generateInsuranceProposal(BigDecimal insuredAmount, Client client,
                                                        InsuranceType insuranceType) {
         String contractNumber = contractNumberGenerator.generateContractNumber();
-        BigDecimal insurancePrice = abstractInsuranceCalcService.calculateInsuranceCost(insuredAmount, insuranceType);
+        BigDecimal insurancePrice = insuranceCalcService.calculateInsuranceCost(insuredAmount, insuranceType);
         return new InsuranceContract(contractNumber, insurancePrice, insuredAmount,
                 properties.getInsuranceCurrency(), client,
                 properties.getOperatingCountry(), insuranceType);
