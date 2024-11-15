@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import static java.math.BigDecimal.ZERO;
 
 @RequiredArgsConstructor
-public abstract class InsuranceCalcCountryService implements InsuranceCalcService {
+public abstract class AbstractInsuranceCalcService implements InsuranceCalcService {
     private final InsuranceCalculationProperties properties;
     private BigDecimal price = ZERO;
 

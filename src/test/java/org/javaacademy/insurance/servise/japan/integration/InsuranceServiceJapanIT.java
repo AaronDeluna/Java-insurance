@@ -5,8 +5,8 @@ import org.javaacademy.insurance.model.Client;
 import org.javaacademy.insurance.model.InsuranceContract;
 import org.javaacademy.insurance.model.InsuranceContractStatus;
 import org.javaacademy.insurance.model.InsuranceType;
-import org.javaacademy.insurance.servise.japan.InsuranceCalcJapanService;
-import org.javaacademy.insurance.servise.japan.InsuranceServiceJapan;
+import org.javaacademy.insurance.servise.japan.AbstractInsuranceCalcJapanService;
+import org.javaacademy.insurance.servise.japan.AbstractInsuranceServiceJapan;
 import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.utils.ContractNumberGenerator;
 import org.junit.jupiter.api.DisplayName;
@@ -33,9 +33,9 @@ import static org.mockito.Mockito.when;
 @Slf4j
 class InsuranceServiceJapanIT {
     @Autowired
-    private InsuranceServiceJapan insuranceServiceJapan;
+    private AbstractInsuranceServiceJapan insuranceServiceJapan;
     @MockBean
-    private InsuranceCalcJapanService insuranceCalcJapanService;
+    private AbstractInsuranceCalcJapanService insuranceCalcJapanService;
     @MockBean
     private Archive archive;
     @MockBean

@@ -14,8 +14,8 @@ import java.math.BigDecimal;
 import static org.javaacademy.insurance.model.InsuranceContractStatus.PAID;
 
 @AllArgsConstructor
-public abstract class InsuranceServiceCountry implements InsuranceService {
-    private InsuranceCalcCountryService insuranceCalcCountryService;
+public abstract class AbstractInsuranceServiceCountry implements InsuranceService {
+    private AbstractInsuranceCalcService abstractInsuranceCalcService;
     private InsuranceCalculationProperties properties;
     private ContractNumberGenerator contractNumberGenerator;
     private Archive archive;
@@ -24,7 +24,7 @@ public abstract class InsuranceServiceCountry implements InsuranceService {
     public InsuranceContract generateInsuranceProposal(BigDecimal insuredAmount, Client client,
                                                        InsuranceType insuranceType) {
         String contractNumber = contractNumberGenerator.generateContractNumber();
-        BigDecimal insurancePrice = insuranceCalcCountryService.calculateInsuranceCost(insuredAmount, insuranceType);
+        BigDecimal insurancePrice = abstractInsuranceCalcService.calculateInsuranceCost(insuredAmount, insuranceType);
         return new InsuranceContract(contractNumber, insurancePrice, insuredAmount,
                 properties.getInsuranceCurrency(), client,
                 properties.getOperatingCountry(), insuranceType);

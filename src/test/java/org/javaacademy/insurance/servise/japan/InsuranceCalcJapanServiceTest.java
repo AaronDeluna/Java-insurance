@@ -1,6 +1,5 @@
 package org.javaacademy.insurance.servise.japan;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class InsuranceCalcJapanServiceTest {
     @Autowired
-    private InsuranceCalcJapanService insuranceCalcJapanService;
+    private AbstractInsuranceCalcJapanService insuranceCalcJapanService;
 
     @Test
     @DisplayName("Успешный расчет стоимости страховки от ограбления")
