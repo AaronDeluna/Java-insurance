@@ -1,4 +1,4 @@
-package org.javaacademy.insurance.servise.brazil;
+package org.javaacademy.insurance.service.brazil;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package org.javaacademy.insurance.servise;
+package org.javaacademy.insurance.service;
 
 import lombok.RequiredArgsConstructor;
 import org.javaacademy.insurance.config.InsuranceCalculationProperties;

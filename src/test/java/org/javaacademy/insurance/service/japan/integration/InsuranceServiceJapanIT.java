@@ -1,12 +1,12 @@
-package org.javaacademy.insurance.servise.japan.integration;
+package org.javaacademy.insurance.service.japan.integration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.javaacademy.insurance.model.Client;
 import org.javaacademy.insurance.model.InsuranceContract;
 import org.javaacademy.insurance.model.InsuranceContractStatus;
 import org.javaacademy.insurance.model.InsuranceType;
-import org.javaacademy.insurance.servise.japan.InsuranceCalcJapanService;
-import org.javaacademy.insurance.servise.japan.InsuranceServiceJapan;
+import org.javaacademy.insurance.service.japan.InsuranceCalcJapanService;
+import org.javaacademy.insurance.service.japan.InsuranceServiceJapan;
 import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.utils.ContractNumberGenerator;
 import org.junit.jupiter.api.BeforeEach;

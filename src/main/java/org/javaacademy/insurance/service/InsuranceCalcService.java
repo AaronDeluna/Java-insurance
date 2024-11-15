@@ -1,4 +1,4 @@
-package org.javaacademy.insurance.servise;
+package org.javaacademy.insurance.service;
 
 
 import org.javaacademy.insurance.model.InsuranceType;
