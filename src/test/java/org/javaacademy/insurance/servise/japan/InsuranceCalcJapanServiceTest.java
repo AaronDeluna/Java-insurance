@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class InsuranceCalcJapanServiceTest {
     @Autowired
-    private AbstractInsuranceCalcJapanService insuranceCalcJapanService;
+    private InsuranceCalcJapanService insuranceCalcJapanService;
 
     @Test
     @DisplayName("Успешный расчет стоимости страховки от ограбления")

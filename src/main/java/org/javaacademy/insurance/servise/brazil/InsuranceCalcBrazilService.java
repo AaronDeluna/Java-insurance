@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Profile("brazil")
-public class AbstractInsuranceCalcBrazilService extends AbstractInsuranceCalcService {
+public class InsuranceCalcBrazilService extends AbstractInsuranceCalcService {
 
-    public AbstractInsuranceCalcBrazilService(InsuranceCalculationProperties properties) {
+    public InsuranceCalcBrazilService(InsuranceCalculationProperties properties) {
         super(properties);
     }
 }

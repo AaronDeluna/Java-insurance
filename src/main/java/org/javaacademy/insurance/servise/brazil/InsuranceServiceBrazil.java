@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Profile("brazil")
-public class AbstractInsuranceServiceBrazil extends AbstractInsuranceServiceCountry {
+public class InsuranceServiceBrazil extends AbstractInsuranceServiceCountry {
 
-    public AbstractInsuranceServiceBrazil(AbstractInsuranceCalcBrazilService insuranceCalcBrazilService,
-                                          InsuranceCalculationProperties properties,
-                                          ContractNumberGenerator contractNumberGenerator,
-                                          Archive archive) {
+    public InsuranceServiceBrazil(InsuranceCalcBrazilService insuranceCalcBrazilService,
+                                  InsuranceCalculationProperties properties,
+                                  ContractNumberGenerator contractNumberGenerator,
+                                  Archive archive) {
         super(insuranceCalcBrazilService, properties, contractNumberGenerator, archive);
     }
 }
