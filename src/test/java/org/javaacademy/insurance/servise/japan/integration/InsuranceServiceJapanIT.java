@@ -9,6 +9,7 @@ import org.javaacademy.insurance.servise.japan.InsuranceCalcJapanService;
 import org.javaacademy.insurance.servise.japan.InsuranceServiceJapan;
 import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.utils.ContractNumberGenerator;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -40,6 +41,12 @@ class InsuranceServiceJapanIT {
     private Archive archive;
     @MockBean
     private ContractNumberGenerator contractNumberGenerator;
+    private Client client;
+
+    @BeforeEach
+    void setUp() {
+        client = new Client("Иванов", "Иван", "Иванович");
+    }
 
     @Test
     @DisplayName("Успешное получение предложения по страховке от грабежа")
@@ -47,7 +54,6 @@ class InsuranceServiceJapanIT {
         String contractNumber = "001";
         BigDecimal insurancePrice = BigDecimal.valueOf(20_000);
         BigDecimal insuredAmount = BigDecimal.valueOf(1_000_000);
-        Client client = new Client("Иванов", "Иван", "Иванович");
         InsuranceType insuranceType = THEFT;
 
         InsuranceContract expectedContract = new InsuranceContract(contractNumber,
@@ -73,7 +79,6 @@ class InsuranceServiceJapanIT {
         String contractNumber = "001";
         BigDecimal insurancePrice = BigDecimal.valueOf(162_000);
         BigDecimal insuredAmount = BigDecimal.valueOf(10_000_000);
-        Client client = new Client("Иванов", "Иван", "Иванович");
         InsuranceType insuranceType = MEDICAL;
 
         InsuranceContract expectedContract = new InsuranceContract(contractNumber,
@@ -102,7 +107,6 @@ class InsuranceServiceJapanIT {
         String contractNumber = "001";
         BigDecimal insurancePrice = BigDecimal.valueOf(165_000);
         BigDecimal insuredAmount = BigDecimal.valueOf(10_000_000);
-        Client client = new Client("Иванов", "Иван", "Иванович");
 
         InsuranceContract expectedContract = new InsuranceContract(
                 contractNumber, insurancePrice, insuredAmount, JPY, client, JAPAN, MEDICAL

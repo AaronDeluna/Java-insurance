@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 import static org.javaacademy.insurance.model.InsuranceContractStatus.PAID;
 
 @AllArgsConstructor
-public abstract class AbstractInsuranceServiceCountry implements InsuranceService {
+public abstract class AbstractInsuranceService implements InsuranceService {
     private AbstractInsuranceCalcService abstractInsuranceCalcService;
     private InsuranceCalculationProperties properties;
     private ContractNumberGenerator contractNumberGenerator;
