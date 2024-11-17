@@ -20,6 +20,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 
+import static java.math.BigDecimal.valueOf;
 import static org.javaacademy.insurance.model.InsuranceContractStatus.PAID;
 import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
 import static org.javaacademy.insurance.model.InsuranceCurrency.JPY;
@@ -41,19 +42,16 @@ class InsuranceServiceJapanIT {
     private Archive archive;
     @MockBean
     private ContractNumberGenerator contractNumberGenerator;
-    private Client client;
-
-    @BeforeEach
-    void setUp() {
-        client = new Client("Иванов", "Иван", "Иванович");
-    }
+    private final Client client = new Client(
+            "Иванов", "Иван", "Иванович"
+    );
 
     @Test
     @DisplayName("Успешное получение предложения по страховке от грабежа")
     void testSuccessfulRobberyInsuranceQuote() {
         String contractNumber = "001";
-        BigDecimal insurancePrice = BigDecimal.valueOf(20_000);
-        BigDecimal insuredAmount = BigDecimal.valueOf(1_000_000);
+        BigDecimal insurancePrice = valueOf(20_000);
+        BigDecimal insuredAmount = valueOf(1_000_000);
         InsuranceType insuranceType = THEFT;
 
         InsuranceContract expectedContract = new InsuranceContract(contractNumber,
@@ -77,8 +75,8 @@ class InsuranceServiceJapanIT {
     @DisplayName("Успешное получение предложения для мед страховки")
     void testSuccessfulInsuranceQuoteForTenMillion() {
         String contractNumber = "001";
-        BigDecimal insurancePrice = BigDecimal.valueOf(162_000);
-        BigDecimal insuredAmount = BigDecimal.valueOf(10_000_000);
+        BigDecimal insurancePrice = valueOf(162_000);
+        BigDecimal insuredAmount = valueOf(10_000_000);
         InsuranceType insuranceType = MEDICAL;
 
         InsuranceContract expectedContract = new InsuranceContract(contractNumber,
@@ -105,11 +103,13 @@ class InsuranceServiceJapanIT {
     @DisplayName("Успешная оплата страховки")
     void testSuccessfulInsurancePayment() {
         String contractNumber = "001";
-        BigDecimal insurancePrice = BigDecimal.valueOf(165_000);
-        BigDecimal insuredAmount = BigDecimal.valueOf(10_000_000);
+        BigDecimal insurancePrice = valueOf(165_000);
+        BigDecimal insuredAmount = valueOf(10_000_000);
 
         InsuranceContract expectedContract = new InsuranceContract(
-                contractNumber, insurancePrice, insuredAmount, JPY, client, JAPAN, MEDICAL
+                contractNumber, insurancePrice,
+                insuredAmount, JPY, client,
+                JAPAN, MEDICAL
         );
 
         Mockito.when(archive.findContractByNumber(contractNumber)).thenReturn(expectedContract);
