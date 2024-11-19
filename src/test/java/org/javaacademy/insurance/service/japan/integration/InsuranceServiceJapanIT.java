@@ -1,6 +1,5 @@
 package org.javaacademy.insurance.service.japan.integration;
 
-import lombok.extern.slf4j.Slf4j;
 import org.javaacademy.insurance.model.Client;
 import org.javaacademy.insurance.model.InsuranceContract;
 import org.javaacademy.insurance.model.InsuranceContractStatus;
@@ -11,7 +10,6 @@ import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.service.ContractNumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -25,13 +23,13 @@ import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
 import static org.javaacademy.insurance.model.InsuranceCurrency.JPY;
 import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
 import static org.javaacademy.insurance.model.InsuranceType.THEFT;
+import static org.javaacademy.insurance.model.OperatingCountry.BRAZIL;
 import static org.javaacademy.insurance.model.OperatingCountry.JAPAN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ActiveProfiles("japan")
 @SpringBootTest
-@Slf4j
 class InsuranceServiceJapanIT {
     @Autowired
     private InsuranceServiceJapan insuranceServiceJapan;
@@ -82,21 +80,16 @@ class InsuranceServiceJapanIT {
                 insurancePrice, insuredAmount, JPY, client, JAPAN, insuranceType
         );
 
+        when(contractNumberGenerator.generateContractNumber()).thenReturn(contractNumber);
+        when(insuranceCalcJapanService.calculateInsuranceCost(insuredAmount, insuranceType)).thenReturn(insurancePrice);
         when(archive.findContractByNumber(contractNumber)).thenReturn(expectedContract);
-        when(insuranceCalcJapanService.calculateInsuranceCost(insuredAmount,
-                insuranceType)).thenReturn(insurancePrice);
 
         InsuranceContract resultContract = archive.findContractByNumber(contractNumber);
-        InsuranceContractStatus resultStatus = resultContract.getInsuranceContractStatus();
-
-        BigDecimal resultInsurancePrice = insuranceCalcJapanService.calculateInsuranceCost(
-                insuredAmount, insuranceType);
+        InsuranceContractStatus resultContractStatus = resultContract.getInsuranceContractStatus();
 
         assertEquals(expectedContract, resultContract);
-        assertEquals(UNPAID, resultStatus);
-        assertEquals(0, insurancePrice.compareTo(resultInsurancePrice));
+        assertEquals(UNPAID, resultContractStatus);
     }
-
 
     @Test
     @DisplayName("Успешная оплата страховки")
@@ -111,7 +104,8 @@ class InsuranceServiceJapanIT {
                 JAPAN, MEDICAL
         );
 
-        Mockito.when(archive.findContractByNumber(contractNumber)).thenReturn(expectedContract);
+        when(contractNumberGenerator.generateContractNumber()).thenReturn(contractNumber);
+        when(archive.findContractByNumber(contractNumber)).thenReturn(expectedContract);
 
         InsuranceContract resultContract = insuranceServiceJapan.payInsurance(contractNumber);
 
