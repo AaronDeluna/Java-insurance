@@ -1,10 +1,8 @@
 package org.javaacademy.insurance.service.japan.integration;
 
-import lombok.extern.slf4j.Slf4j;
 import org.javaacademy.insurance.model.Client;
 import org.javaacademy.insurance.model.InsuranceContract;
 import org.javaacademy.insurance.model.InsuranceContractStatus;
-import org.javaacademy.insurance.model.InsuranceCurrency;
 import org.javaacademy.insurance.model.InsuranceType;
 import org.javaacademy.insurance.service.japan.InsuranceCalcJapanService;
 import org.javaacademy.insurance.service.japan.InsuranceServiceJapan;
@@ -12,7 +10,6 @@ import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.service.ContractNumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -33,7 +30,6 @@ import static org.mockito.Mockito.when;
 
 @ActiveProfiles("japan")
 @SpringBootTest
-@Slf4j
 class InsuranceServiceJapanIT {
     @Autowired
     private InsuranceServiceJapan insuranceServiceJapan;
