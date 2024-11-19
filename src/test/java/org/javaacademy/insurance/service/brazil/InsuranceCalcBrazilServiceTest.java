@@ -8,6 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 
+import static java.math.BigDecimal.valueOf;
 import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
 import static org.javaacademy.insurance.model.InsuranceType.THEFT;
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,16 +21,16 @@ class InsuranceCalcBrazilServiceTest {
     @Test
     @DisplayName("Успешный расчет стоимости страхования от ограбления")
     void testSuccessfulRobberyInsuranceCostCalculation() {
-        BigDecimal expected = BigDecimal.valueOf(2_800);
-        BigDecimal result = insuranceCalcBrazilService.calculateInsuranceCost(BigDecimal.valueOf(50_000), THEFT);
+        BigDecimal expected = valueOf(2_800);
+        BigDecimal result = insuranceCalcBrazilService.calculateInsuranceCost(valueOf(50_000), THEFT);
         assertEquals(0, expected.compareTo(result));
     }
 
     @Test
     @DisplayName("Успешный расчет стоимости медицинского страхования")
     void testSuccessfulMedicalInsuranceCalculation() {
-        BigDecimal expected = BigDecimal.valueOf(6_800);
-        BigDecimal result = insuranceCalcBrazilService.calculateInsuranceCost(BigDecimal.valueOf(200_000), MEDICAL);
+        BigDecimal expected = valueOf(6_800);
+        BigDecimal result = insuranceCalcBrazilService.calculateInsuranceCost(valueOf(200_000), MEDICAL);
         assertEquals(0, expected.compareTo(result));
     }
 }

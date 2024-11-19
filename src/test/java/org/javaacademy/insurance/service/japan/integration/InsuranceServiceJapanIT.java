@@ -8,8 +8,7 @@ import org.javaacademy.insurance.model.InsuranceType;
 import org.javaacademy.insurance.service.japan.InsuranceCalcJapanService;
 import org.javaacademy.insurance.service.japan.InsuranceServiceJapan;
 import org.javaacademy.insurance.storage.Archive;
-import org.javaacademy.insurance.utils.ContractNumberGenerator;
-import org.junit.jupiter.api.BeforeEach;
+import org.javaacademy.insurance.service.ContractNumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -119,6 +118,5 @@ class InsuranceServiceJapanIT {
         assertEquals(expectedContract, resultContract);
         assertEquals(PAID, resultContract.getInsuranceContractStatus());
     }
-
 
 }

@@ -1,4 +1,4 @@
-package org.javaacademy.insurance.utils;
+package org.javaacademy.insurance.service;
 
 import org.springframework.stereotype.Component;
 

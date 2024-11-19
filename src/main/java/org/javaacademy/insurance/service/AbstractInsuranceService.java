@@ -7,7 +7,6 @@ import org.javaacademy.insurance.model.Client;
 import org.javaacademy.insurance.model.InsuranceContract;
 import org.javaacademy.insurance.model.InsuranceType;
 import org.javaacademy.insurance.storage.Archive;
-import org.javaacademy.insurance.utils.ContractNumberGenerator;
 
 import java.math.BigDecimal;
 
