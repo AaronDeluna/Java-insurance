@@ -1,11 +1,6 @@
 package org.javaacademy.insurance.model;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 
 import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;

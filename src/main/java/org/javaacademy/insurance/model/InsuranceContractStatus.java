@@ -5,6 +5,5 @@ import lombok.Getter;
 @Getter
 public enum InsuranceContractStatus {
     UNPAID,
-    PAID,
-    ;
+    PAID;
 }
