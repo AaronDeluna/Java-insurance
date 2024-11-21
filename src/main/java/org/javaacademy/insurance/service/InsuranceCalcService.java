@@ -1,7 +1,7 @@
 package org.javaacademy.insurance.service;
 
 
-import org.javaacademy.insurance.model.InsuranceType;
+import org.javaacademy.insurance.insurance_objects.InsuranceType;
 
 import java.math.BigDecimal;
 

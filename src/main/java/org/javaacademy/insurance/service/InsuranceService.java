@@ -1,8 +1,8 @@
 package org.javaacademy.insurance.service;
 
-import org.javaacademy.insurance.model.Client;
-import org.javaacademy.insurance.model.InsuranceContract;
-import org.javaacademy.insurance.model.InsuranceType;
+import org.javaacademy.insurance.insurance_objects.Client;
+import org.javaacademy.insurance.insurance_objects.InsuranceContract;
+import org.javaacademy.insurance.insurance_objects.InsuranceType;
 import org.javaacademy.insurance.exception.ContractNotFoundException;
 
 import java.math.BigDecimal;

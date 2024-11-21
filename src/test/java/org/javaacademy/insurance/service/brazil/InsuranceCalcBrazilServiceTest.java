@@ -9,8 +9,8 @@ import org.springframework.test.context.ActiveProfiles;
 import java.math.BigDecimal;
 
 import static java.math.BigDecimal.valueOf;
-import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
-import static org.javaacademy.insurance.model.InsuranceType.THEFT;
+import static org.javaacademy.insurance.insurance_objects.InsuranceType.MEDICAL;
+import static org.javaacademy.insurance.insurance_objects.InsuranceType.THEFT;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ActiveProfiles("brazil")

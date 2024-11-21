@@ -2,7 +2,7 @@ package org.javaacademy.insurance.storage;
 
 import lombok.Getter;
 import org.javaacademy.insurance.exception.ContractNotFoundException;
-import org.javaacademy.insurance.model.InsuranceContract;
+import org.javaacademy.insurance.insurance_objects.InsuranceContract;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

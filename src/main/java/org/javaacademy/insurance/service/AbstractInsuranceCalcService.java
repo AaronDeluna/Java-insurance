@@ -2,7 +2,7 @@ package org.javaacademy.insurance.service;
 
 import lombok.RequiredArgsConstructor;
 import org.javaacademy.insurance.config.InsuranceCalculationProperties;
-import org.javaacademy.insurance.model.InsuranceType;
+import org.javaacademy.insurance.insurance_objects.InsuranceType;
 import org.javaacademy.insurance.utils.CalculateCostUtils;
 
 import java.math.BigDecimal;

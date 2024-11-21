@@ -1,17 +1,15 @@
 package org.javaacademy.insurance.service.japan.integration;
 
-import org.javaacademy.insurance.model.Client;
-import org.javaacademy.insurance.model.InsuranceContract;
-import org.javaacademy.insurance.model.InsuranceContractStatus;
-import org.javaacademy.insurance.model.InsuranceType;
+import org.javaacademy.insurance.insurance_objects.Client;
+import org.javaacademy.insurance.insurance_objects.InsuranceContract;
+import org.javaacademy.insurance.insurance_objects.InsuranceContractStatus;
+import org.javaacademy.insurance.insurance_objects.InsuranceType;
 import org.javaacademy.insurance.service.japan.InsuranceCalcJapanService;
 import org.javaacademy.insurance.service.japan.InsuranceServiceJapan;
 import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.service.ContractNumberGenerator;
-import org.javaacademy.insurance.utils.CalculateCostUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,12 +18,12 @@ import org.springframework.test.context.ActiveProfiles;
 import java.math.BigDecimal;
 
 import static java.math.BigDecimal.valueOf;
-import static org.javaacademy.insurance.model.InsuranceContractStatus.PAID;
-import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
-import static org.javaacademy.insurance.model.InsuranceCurrency.JPY;
-import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
-import static org.javaacademy.insurance.model.InsuranceType.THEFT;
-import static org.javaacademy.insurance.model.OperatingCountry.JAPAN;
+import static org.javaacademy.insurance.insurance_objects.InsuranceContractStatus.PAID;
+import static org.javaacademy.insurance.insurance_objects.InsuranceContractStatus.UNPAID;
+import static org.javaacademy.insurance.insurance_objects.InsuranceCurrency.JPY;
+import static org.javaacademy.insurance.insurance_objects.InsuranceType.MEDICAL;
+import static org.javaacademy.insurance.insurance_objects.InsuranceType.THEFT;
+import static org.javaacademy.insurance.insurance_objects.OperatingCountry.JAPAN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
