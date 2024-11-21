@@ -1,9 +1,9 @@
-package org.javaacademy.insurance.model;
+package org.javaacademy.insurance.insurance_objects;
 
 import lombok.Data;
 import java.math.BigDecimal;
 
-import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
+import static org.javaacademy.insurance.insurance_objects.InsuranceContractStatus.UNPAID;
 
 /**
  * Страховой договор.

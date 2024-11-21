@@ -3,14 +3,14 @@ package org.javaacademy.insurance.service;
 import lombok.AllArgsConstructor;
 import org.javaacademy.insurance.config.InsuranceCalculationProperties;
 import org.javaacademy.insurance.exception.ContractNotFoundException;
-import org.javaacademy.insurance.model.Client;
-import org.javaacademy.insurance.model.InsuranceContract;
-import org.javaacademy.insurance.model.InsuranceType;
+import org.javaacademy.insurance.insurance_objects.Client;
+import org.javaacademy.insurance.insurance_objects.InsuranceContract;
+import org.javaacademy.insurance.insurance_objects.InsuranceType;
 import org.javaacademy.insurance.storage.Archive;
 
 import java.math.BigDecimal;
 
-import static org.javaacademy.insurance.model.InsuranceContractStatus.PAID;
+import static org.javaacademy.insurance.insurance_objects.InsuranceContractStatus.PAID;
 
 @AllArgsConstructor
 public abstract class AbstractInsuranceService implements InsuranceService {

@@ -1,4 +1,4 @@
-package org.javaacademy.insurance.model;
+package org.javaacademy.insurance.insurance_objects;
 
 import lombok.Getter;
 
