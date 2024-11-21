@@ -7,12 +7,9 @@ import org.javaacademy.insurance.utils.CalculateCostUtils;
 
 import java.math.BigDecimal;
 
-import static java.math.BigDecimal.ZERO;
-
 @RequiredArgsConstructor
 public abstract class AbstractInsuranceCalcService implements InsuranceCalcService {
     private final InsuranceCalculationProperties properties;
-    private BigDecimal price = ZERO;
 
     /**
      * Расчет стоимости страховки в Японии.
@@ -24,12 +21,15 @@ public abstract class AbstractInsuranceCalcService implements InsuranceCalcServi
     @Override
     public BigDecimal calculateInsuranceCost(BigDecimal insuredAmount, InsuranceType insuranceType) {
         switch (insuranceType) {
-            case THEFT -> price = CalculateCostUtils.calculateCost(insuredAmount,
-                    properties.getRobberyCoefficient(), properties.getTheftServiceCost());
-            case MEDICAL -> price = CalculateCostUtils.calculateCost(insuredAmount,
-                    properties.getMedicalCaseCoefficient(), properties.getMedicalServiceCost());
+            case THEFT -> {
+                return CalculateCostUtils.calculateCost(insuredAmount,
+                        properties.getRobberyCoefficient(), properties.getTheftServiceCost());
+            }
+            case MEDICAL -> {
+                return CalculateCostUtils.calculateCost(insuredAmount,
+                        properties.getMedicalCaseCoefficient(), properties.getMedicalServiceCost());
+            }
             default -> throw new IllegalArgumentException();
         }
-        return price;
     }
 }
