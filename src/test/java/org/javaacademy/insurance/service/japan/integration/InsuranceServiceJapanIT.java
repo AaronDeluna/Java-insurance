@@ -8,8 +8,10 @@ import org.javaacademy.insurance.service.japan.InsuranceCalcJapanService;
 import org.javaacademy.insurance.service.japan.InsuranceServiceJapan;
 import org.javaacademy.insurance.storage.Archive;
 import org.javaacademy.insurance.service.ContractNumberGenerator;
+import org.javaacademy.insurance.utils.CalculateCostUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -23,7 +25,6 @@ import static org.javaacademy.insurance.model.InsuranceContractStatus.UNPAID;
 import static org.javaacademy.insurance.model.InsuranceCurrency.JPY;
 import static org.javaacademy.insurance.model.InsuranceType.MEDICAL;
 import static org.javaacademy.insurance.model.InsuranceType.THEFT;
-import static org.javaacademy.insurance.model.OperatingCountry.BRAZIL;
 import static org.javaacademy.insurance.model.OperatingCountry.JAPAN;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -104,7 +105,6 @@ class InsuranceServiceJapanIT {
                 JAPAN, MEDICAL
         );
 
-        when(contractNumberGenerator.generateContractNumber()).thenReturn(contractNumber);
         when(archive.findContractByNumber(contractNumber)).thenReturn(expectedContract);
 
         InsuranceContract resultContract = insuranceServiceJapan.payInsurance(contractNumber);

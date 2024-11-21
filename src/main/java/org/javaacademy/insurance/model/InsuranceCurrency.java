@@ -5,6 +5,5 @@ import lombok.Getter;
 @Getter
 public enum InsuranceCurrency {
     ZAR,
-    JPY,
-    ;
+    JPY;
 }

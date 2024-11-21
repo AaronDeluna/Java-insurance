@@ -24,9 +24,11 @@ public abstract class AbstractInsuranceService implements InsuranceService {
                                                        InsuranceType insuranceType) {
         String contractNumber = contractNumberGenerator.generateContractNumber();
         BigDecimal insurancePrice = insuranceCalcService.calculateInsuranceCost(insuredAmount, insuranceType);
-        return new InsuranceContract(contractNumber, insurancePrice, insuredAmount,
+        InsuranceContract contract = new InsuranceContract(contractNumber, insurancePrice, insuredAmount,
                 properties.getInsuranceCurrency(), client,
                 properties.getOperatingCountry(), insuranceType);
+        archive.add(contractNumber, contract);
+        return contract;
     }
 
     @Override

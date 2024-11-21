@@ -33,6 +33,7 @@ public class InsuranceCalcBrazilService implements InsuranceCalcService {
                     properties.getRobberyCoefficient(), properties.getTheftServiceCost());
             case MEDICAL -> price = CalculateCostUtils.calculateCost(insuredAmount,
                     properties.getMedicalCaseCoefficient(), properties.getMedicalServiceCost());
+            default -> throw new IllegalArgumentException();
         }
         return price;
     }
